@@ -17,6 +17,7 @@ Works with any service that supports the OpenAI Chat Completions format:
 | Provider | Base URL |
 |----------|----------|
 | OpenRouter | `https://openrouter.ai/api/v1` |
+| ZenMux | `https://zenmux.com/api/v1` |
 | OpenAI | `https://api.openai.com/v1` |
 | Any OpenAI-compatible | `https://your-provider/v1` |
 
