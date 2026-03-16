@@ -1,0 +1,33 @@
+task: summarize
+input: |
+  Artificial intelligence has transformed industries from healthcare to finance.
+  Machine learning models can now process vast amounts of data to identify patterns
+  that humans might miss. However, the effectiveness of these models heavily depends
+  on how we prompt them. Different phrasings can lead to dramatically different outputs,
+  making prompt engineering a critical skill for AI practitioners.
+models:
+  - openai/gpt-5-mini
+  - google/gemini-2.5-flash
+prompts:
+  - "Summarize the following text in 3 bullet points:"
+  - "TL;DR the following:"
+  - "Give me the key takeaways from:"
+  - "In one paragraph, distill the main ideas of:"
+scoring:
+  criteria:
+    - relevance
+    - conciseness
+    - accuracy
+  judge_models:
+    - google/gemini-2.5-flash
+    - openai/gpt-5-mini
+  exclude_self_judge: true
+  weights:
+    relevance: 3
+    conciseness: 2
+    accuracy: 3
+    length: 1
+    structure: 1
+    completeness: 1
+    repetition: 1
+    formatting: 0.5

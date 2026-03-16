@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prompt-tuner"
+version = "0.1.0"
+description = "CLI tool that iterates prompts across AI models, scores outputs, and suggests the best version"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.27",
+    "rich>=13.0",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-httpserver>=1.0",
+]
+
+[project.scripts]
+prompt-tuner = "prompt_tuner.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
